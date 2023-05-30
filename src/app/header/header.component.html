@@ -1,0 +1,11 @@
+<div class="header">
+  <a href="" class="logo">
+    <img [src]="logoUrl" alt="logo" />
+  </a>
+
+  <div class="menu">
+    <a [href]="link.url" *ngFor="let link of links">
+      {{ link.text }}
+    </a>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  width: 100vw;
+  height: 74px;
+  background-color: #dddddd;
+}
+
+.logo img {
+  margin: 1em;
+  width: 150px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & a {
+    box-sizing: border-box;
+    height: 100%;
+    width: fit-content;
+    padding: 20px;
+    border: 1px solid #dd4;
+    color: black;
+    text-decoration: none;
+  }
+}
