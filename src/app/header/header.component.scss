@@ -1,9 +1,13 @@
 .header {
   display: grid;
-  grid-template-columns: 1fr 8fr;
-  width: 100vw;
-  height: 74px;
+  grid-template-columns: 1fr 5fr;
+  width: 100%;
+  height: 8vh;
+  box-sizing: border-box;
   background-color: #dddddd;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 .logo img {
@@ -15,12 +19,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.links {
+  box-sizing: border-box;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
   & a {
-    box-sizing: border-box;
-    height: 100%;
-    width: fit-content;
-    padding: 20px;
-    border: 1px solid #dd4;
     color: black;
     text-decoration: none;
   }

@@ -4,8 +4,10 @@
   </a>
 
   <div class="menu">
-    <a [href]="link.url" *ngFor="let link of links">
-      {{ link.text }}
-    </a>
+    <div class="links" *ngFor="let link of links">
+      <a [href]="link.url">
+        {{ link.text }}
+      </a>
+    </div>
   </div>
 </div>

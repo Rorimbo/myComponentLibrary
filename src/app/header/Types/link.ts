@@ -1,4 +1,4 @@
-export type Link = {
+export type HeaderLink = {
   text: string;
   url: string;
 };

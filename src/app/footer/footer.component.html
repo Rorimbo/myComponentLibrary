@@ -1,0 +1,26 @@
+<div class="footer">
+  <div class="actions">
+    <div class="tabs">
+      <div class="tab" *ngFor="let tab of tabs">
+        <div class="tab-header">
+          {{ tab.name }}
+        </div>
+
+        <div class="tab-link">
+          <a [href]="link.url" *ngFor="let link of tab.links">
+            {{ link.text }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a [href]="button.action" *ngFor="let button of buttons">
+        <img [src]="button.url" [alt]="button.altText" />
+      </a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    {{ companyName + ", " + currentYear }}
+  </div>
+</div>

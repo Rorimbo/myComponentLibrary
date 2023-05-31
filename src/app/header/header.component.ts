@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Link } from './Types/link';
+import { HeaderLink } from './Types/link';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,5 @@ import { Link } from './Types/link';
 })
 export class HeaderComponent {
   @Input() logoUrl: string;
-  @Input() links: Link[];
+  @Input() links: HeaderLink[];
 }
