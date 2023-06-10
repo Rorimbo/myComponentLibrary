@@ -8,6 +8,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class ToolbarComponent {
   @Output() onAdd = new EventEmitter<any>();
   @Output() onRead = new EventEmitter<any>();
-  @Output() onUpdate = new EventEmitter<any>();
+  @Output() onEdit = new EventEmitter<any>();
   @Output() onDelete = new EventEmitter<any>();
 }

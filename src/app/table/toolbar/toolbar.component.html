@@ -1,8 +1,12 @@
 <div class="common">
   <div class="button">
-    <button class="btn" (click)="this.onAdd.emit()">ADD</button>
+    <button class="btn" (click)="this.onAdd.emit()">
+      {{ "Add" | uppercase }}
+    </button>
     <button class="btn">Read</button>
-    <button class="btn">Update</button>
+    <button class="btn" (click)="this.onEdit.emit()">
+      {{ "Edit" | uppercase }}
+    </button>
     <button class="btn">Delete</button>
   </div>
 </div>

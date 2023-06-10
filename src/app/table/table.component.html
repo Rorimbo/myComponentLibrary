@@ -1,5 +1,5 @@
 <div>
-  <app-toolbar (onAdd)="addRow()"></app-toolbar>
+  <app-toolbar (onAdd)="addRow()" (onEdit)="editRow()"></app-toolbar>
 </div>
 <div class="common">
   <table class="table">
@@ -9,8 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let el of arr">
-        <td *ngFor="let column of columns">{{ el[column] }}</td>
+      <tr
+        *ngFor="let el of arr; let i = index"
+        (click)="onSelectRow(i, $event)"
+      >
+        <td *ngFor="let column of columns">
+          {{ el[column] }}
+        </td>
       </tr>
     </tbody>
   </table>
