@@ -1,0 +1,37 @@
+.common {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+
+.input {
+  width: 50vw;
+  height: 5vh;
+  margin-right: 2em;
+  padding: 0;
+  border: none;
+  border-radius: 2vw;
+  background-color: #75cede;
+  text-align: center;
+}
+
+.btn {
+  width: 7vw;
+  height: 5vh;
+  margin-left: 1em;
+  padding: 0;
+  border: none;
+  border-radius: 2vw;
+  background: #00a6bc;
+}
+
+.btn:nth-child(even) {
+  background: #75cede;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: none;
+}

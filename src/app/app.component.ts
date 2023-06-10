@@ -59,4 +59,17 @@ export class AppComponent {
       altText: 'youtube',
     },
   ];
+
+  arr = [
+    {
+      Club: 'Barcelona',
+      Player: 'Messi',
+      Position: 'Forward',
+    },
+    {
+      Club: 'Milan',
+      Player: 'Rorimbo',
+      Position: 'Forward',
+    },
+  ];
 }

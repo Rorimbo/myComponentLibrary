@@ -1,0 +1,40 @@
+.common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10em;
+}
+
+.table {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+.table thead td {
+  text-align: center;
+  border: none;
+  padding: 10px 15px;
+  background: #00a6bc;
+  font-size: 14px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.table tbody td {
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 10px 15px;
+  font-size: 14px;
+  vertical-align: top;
+}
+.table thead tr th:first-child,
+.table tbody tr td:first-child {
+  border-left: none;
+}
+.table thead tr th:last-child,
+.table tbody tr td:last-child {
+  border-right: none;
+}
+.table tbody tr:nth-child(even) {
+  background: #75cede;
+}

@@ -1,0 +1,26 @@
+<div>
+  <app-toolbar (onAdd)="addRow()"></app-toolbar>
+</div>
+<div class="common">
+  <table class="table">
+    <thead>
+      <tr>
+        <td *ngFor="let column of columns">{{ column }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let el of arr">
+        <td *ngFor="let column of columns">{{ el[column] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #addDialog>
+  <form [formGroup]="form">
+    <div *ngFor="let column of columns">
+      <label>{{ column }}</label>
+      <input type="text" [formControlName]="column" />
+    </div>
+  </form>
+</ng-template>
