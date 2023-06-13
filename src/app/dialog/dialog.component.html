@@ -3,7 +3,7 @@
   <ng-container *ngTemplateOutlet="data.content"></ng-container>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onOkClick()">
+  <button mat-button (click)="onOkClick()" *ngIf="!data.hideOkButton">
     {{ data.okText }}
   </button>
   <button mat-button (click)="onNoClick()">{{ data.closeText }}</button>

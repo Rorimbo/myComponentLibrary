@@ -1,6 +1,7 @@
 <div>
   <app-toolbar
     (onAdd)="addRow()"
+    (onRead)="readRow()"
     (onEdit)="editRow()"
     (onDelete)="delRow()"
   ></app-toolbar>
@@ -29,7 +30,15 @@
   <form [formGroup]="form">
     <div *ngFor="let column of columns">
       <label>{{ column }}</label>
-      <input type="text" [formControlName]="column" />
+      <input
+        type="text"
+        [formControlName]="column"
+        [attr.readonly]="isReadOnly"
+      />
     </div>
   </form>
+</ng-template>
+
+<ng-template #delDialog>
+  <div>Delete Row?</div>
 </ng-template>

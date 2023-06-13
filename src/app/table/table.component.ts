@@ -21,8 +21,10 @@ export class TableComponent implements OnChanges {
   form: FormGroup;
   selectedRow: any;
   currentElement: any;
+  isReadOnly: boolean | null = null;
 
   @ViewChild('addDialog') addDialog: TemplateRef<HTMLElement>;
+  @ViewChild('delDialog') delDialog: TemplateRef<HTMLElement>;
 
   constructor(public dialog: MatDialog) {
     this.form = new FormGroup({});
@@ -53,13 +55,43 @@ export class TableComponent implements OnChanges {
       content: this.addDialog,
       okText: 'Save',
       closeText: 'Cancel',
-      checkOkButton: null,
+      hideOkButton: null,
       onOkClick: () => {
         this.arr.push(this.form.value);
         this.form.reset();
       },
       onCloseClick: () => {
         this.form.reset();
+      },
+    };
+
+    this.dialog.open(DialogComponent, {
+      data: dialogData,
+    });
+  }
+
+  readRow() {
+    if (!this.selectedRow) {
+      alert('Select Row');
+      return;
+    }
+
+    this.isReadOnly = true;
+
+    for (const [key, value] of Object.entries(this.selectedRow.data)) {
+      this.form.controls[key].setValue(value);
+    }
+
+    let dialogData: DialogData = {
+      title: 'Read',
+      content: this.addDialog,
+      okText: '',
+      closeText: 'Close',
+      hideOkButton: true,
+      onOkClick: () => {},
+      onCloseClick: () => {
+        this.form.reset();
+        this.isReadOnly = null;
       },
     };
 
@@ -83,9 +115,10 @@ export class TableComponent implements OnChanges {
       content: this.addDialog,
       okText: 'Save',
       closeText: 'Cancel',
-      checkOkButton: null,
+      hideOkButton: null,
       onOkClick: () => {
         this.arr[this.selectedRow.id] = this.form.value;
+        this.selectedRow.data = this.form.value;
         this.form.reset();
       },
       onCloseClick: () => {
@@ -99,7 +132,28 @@ export class TableComponent implements OnChanges {
   }
 
   delRow() {
-    this.arr.splice(this.selectedRow.id, 1);
-    this.selectedRow = null;
+    if (!this.selectedRow) {
+      alert('Select Row');
+      return;
+    }
+
+    let dialogData: DialogData = {
+      title: 'Delete Row',
+      content: this.delDialog,
+      okText: 'Delete',
+      closeText: 'Cancel',
+      hideOkButton: null,
+      onOkClick: () => {
+        this.arr.splice(this.selectedRow.id, 1);
+        this.selectedRow = null;
+      },
+      onCloseClick: () => {
+        this.form.reset();
+      },
+    };
+
+    this.dialog.open(DialogComponent, {
+      data: dialogData,
+    });
   }
 }

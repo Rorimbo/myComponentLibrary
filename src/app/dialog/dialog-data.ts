@@ -5,7 +5,7 @@ export interface DialogData {
   content: TemplateRef<HTMLElement>;
   okText: string;
   closeText: string;
-  checkOkButton: any;
+  hideOkButton: boolean | null;
   onOkClick: any;
   onCloseClick: any;
 }
