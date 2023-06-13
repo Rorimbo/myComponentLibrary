@@ -3,10 +3,11 @@
     <button class="btn" (click)="this.onAdd.emit()">
       {{ "Add" | uppercase }}
     </button>
-    <button class="btn">Read</button>
     <button class="btn" (click)="this.onEdit.emit()">
       {{ "Edit" | uppercase }}
     </button>
-    <button class="btn">Delete</button>
+    <button class="btn" (click)="this.onDelete.emit()">
+      {{ "Delete" | uppercase }}
+    </button>
   </div>
 </div>

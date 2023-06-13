@@ -64,12 +64,23 @@ export class AppComponent {
     {
       Club: 'Barcelona',
       Player: 'Messi',
+      Country: 'Argentina',
       Position: 'Forward',
+      Number: 10,
     },
     {
-      Club: 'Milan',
-      Player: 'Rorimbo',
+      Club: 'Juventus',
+      Player: 'Buffon',
+      Country: 'Italy',
+      Position: 'Goalkiper',
+      Number: 1,
+    },
+    {
+      Club: 'Inter',
+      Player: 'Lukaku',
+      Country: 'Belgium',
       Position: 'Forward',
+      Number: 9,
     },
   ];
 }

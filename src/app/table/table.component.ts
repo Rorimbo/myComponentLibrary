@@ -97,4 +97,9 @@ export class TableComponent implements OnChanges {
       data: dialogData,
     });
   }
+
+  delRow() {
+    this.arr.splice(this.selectedRow.id, 1);
+    this.selectedRow = null;
+  }
 }
